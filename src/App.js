@@ -7,7 +7,21 @@ import './App.css'
 
 class BooksApp extends React.Component {
     state = {
-        books: []
+        books: [],
+        bookshelves: [
+            {
+                id: 'currentlyReading',
+                name: 'Currently Reading'
+            },
+            {
+                id: 'wantToRead',
+                name: 'Want to Read'
+            },
+            {
+                id: 'read',
+                name: 'Read'
+            }
+        ]
     }
 
     componentDidMount() {
@@ -25,6 +39,7 @@ class BooksApp extends React.Component {
                 <Route exact path="/" render={() => (
                     <ListBooks
                         books={this.state.books}
+                        bookshelves={this.state.bookshelves}
                     />
                 )}/>
             </div>

@@ -5,11 +5,12 @@ import Book from './Book'
 
 class ListBooks extends Component {
 	static propTypes = {
-		books: PropTypes.array.isRequired
+		books: PropTypes.array.isRequired,
+		bookshelves: PropTypes.array.isRequired
 	}
 
 	render() {
-		const { books } = this.props
+		const { books, bookshelves } = this.props
 
 		return (
 			<div className="list-books">
