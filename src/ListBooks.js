@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Book from './Book'
+import Bookshelf from './Bookshelf'
 
 class ListBooks extends Component {
 	static propTypes = {
@@ -19,54 +19,14 @@ class ListBooks extends Component {
 				</div>
 				<div className="list-books-content">
 					<div>
-						<div className="bookshelf">
-							<h2 className="bookshelf-title">Currently Reading</h2>
-							<div className="bookshelf-books">
-								<ol className="books-grid">
-									{books.map((book) => (
-										<li key={book.id}>
-											<Book
-												coverURL={book.imageLinks.thumbnail}
-												title={book.title}
-												authors={book.authors}
-											/>
-										</li>
-									))}
-								</ol>
-							</div>
-						</div>
-						<div className="bookshelf">
-							<h2 className="bookshelf-title">Want to Read</h2>
-							<div className="bookshelf-books">
-								<ol className="books-grid">
-									{books.map((book) => (
-										<li key={book.id}>
-											<Book
-												coverURL={book.imageLinks.thumbnail}
-												title={book.title}
-												authors={book.authors}
-											/>
-										</li>
-									))}
-								</ol>
-							</div>
-						</div>
-						<div className="bookshelf">
-							<h2 className="bookshelf-title">Read</h2>
-							<div className="bookshelf-books">
-								<ol className="books-grid">
-									{books.map((book) => (
-										<li key={book.id}>
-											<Book
-												coverURL={book.imageLinks.thumbnail}
-												title={book.title}
-												authors={book.authors}
-											/>
-										</li>
-									))}
-								</ol>
-							</div>
-						</div>
+						{bookshelves.map((bookshelf) => (
+							<Bookshelf
+								key={bookshelf.id}
+								books={books}
+								id={bookshelf.id}
+								name={bookshelf.name}
+							/>
+						))}
 					</div>
 				</div>
 				<div className="open-search">
