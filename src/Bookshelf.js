@@ -17,7 +17,9 @@ class Bookshelf extends Component {
 				<h2 className="bookshelf-title">{name}</h2>
 				<div className="bookshelf-books">
 					<ol className="books-grid">
-						{books.map((book) => (
+						{books.filter(
+							book => id === book.shelf
+						).map((book) => (
 							<li key={book.id}>
 								<Book
 									coverURL={book.imageLinks.thumbnail}
