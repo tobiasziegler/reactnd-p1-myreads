@@ -22,9 +22,7 @@ class Bookshelf extends Component {
 						).map((book) => (
 							<li key={book.id}>
 								<Book
-									coverURL={book.imageLinks.thumbnail}
-									title={book.title}
-									authors={book.authors}
+									book={book}
 								/>
 							</li>
 						))}
