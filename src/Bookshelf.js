@@ -6,11 +6,12 @@ class Bookshelf extends Component {
 	static PropTypes = {
 		books: PropTypes.array.isRequired,
 		id: PropTypes.string.isRequired,
-		name: PropTypes.string.isRequired
+		name: PropTypes.string.isRequired,
+		setShelf: PropTypes.func.isRequired
 	}
 
 	render() {
-		const { books, id, name } = this.props
+		const { books, id, name, setShelf } = this.props
 
 		return (
 			<div className="bookshelf">
@@ -23,6 +24,7 @@ class Bookshelf extends Component {
 							<li key={book.id}>
 								<Book
 									book={book}
+									setShelf={setShelf}
 								/>
 							</li>
 						))}

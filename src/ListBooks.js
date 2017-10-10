@@ -6,11 +6,12 @@ import Bookshelf from './Bookshelf'
 class ListBooks extends Component {
 	static propTypes = {
 		books: PropTypes.array.isRequired,
-		bookshelves: PropTypes.array.isRequired
+		bookshelves: PropTypes.array.isRequired,
+		setShelf: PropTypes.func.isRequired
 	}
 
 	render() {
-		const { books, bookshelves } = this.props
+		const { books, bookshelves, setShelf } = this.props
 
 		return (
 			<div className="list-books">
@@ -25,6 +26,7 @@ class ListBooks extends Component {
 								books={books}
 								id={bookshelf.id}
 								name={bookshelf.name}
+								setShelf={setShelf}
 							/>
 						))}
 					</div>
