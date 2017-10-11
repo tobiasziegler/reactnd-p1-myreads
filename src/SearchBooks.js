@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import Book from './Book'
 import * as BooksAPI from './BooksAPI'
+
 
 class SearchBooks extends Component {
 	state = {
@@ -19,6 +21,7 @@ class SearchBooks extends Component {
 	}
 
 	render() {
+		const { books } = this.state
 		return (
 			<div className="search-books">
 				<div className="search-books-bar">
@@ -42,7 +45,15 @@ class SearchBooks extends Component {
 					</div>
 				</div>
 				<div className="search-books-results">
-					<ol className="books-grid"></ol>
+					<ol className="books-grid">
+						{books.map((book) => (
+							<li key={book.id}>
+								<Book
+									book={book}
+								/>
+							</li>
+						))}
+					</ol>
 				</div>
 			</div>
 
