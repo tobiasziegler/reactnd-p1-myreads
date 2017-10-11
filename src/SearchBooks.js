@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import Book from './Book'
 import * as BooksAPI from './BooksAPI'
 
@@ -8,6 +9,10 @@ class SearchBooks extends Component {
 	state = {
 		query: '',
 		books: []
+	}
+
+	static PropTypes = {
+		setShelf: PropTypes.func.isRequired
 	}
 
 	updateQuery = (query) => {
@@ -22,6 +27,8 @@ class SearchBooks extends Component {
 
 	render() {
 		const { books } = this.state
+		const { setShelf } = this.props
+
 		return (
 			<div className="search-books">
 				<div className="search-books-bar">
@@ -50,6 +57,7 @@ class SearchBooks extends Component {
 							<li key={book.id}>
 								<Book
 									book={book}
+									setShelf={setShelf}
 								/>
 							</li>
 						))}
