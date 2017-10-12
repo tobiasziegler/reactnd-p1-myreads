@@ -16,25 +16,29 @@ class SearchBooks extends Component {
 		shelvedBooks: PropTypes.array.isRequired
 	}
 
+	// Match books already on shelves and add the shelf values
+	matchBooks = (searchResults, shelvedBooks) => {
+		return searchResults.map((result) => {
+			const index = shelvedBooks.findIndex((book) => {
+				return book.id === result.id
+			})
+
+			if (index !== -1) {
+				result.shelf = shelvedBooks[index].shelf
+			} else {
+				result.shelf = 'none'
+			}
+
+			return result
+		})
+	}
+
 	updateQuery = (query) => {
 		this.setState({ query: query.trim() })
 
 		if (query) {
 			BooksAPI.search(query).then((results) => {
-				// Match books already on shelves and add the shelf values
-				results = results.map((result) => {
-					const index = this.props.shelvedBooks.findIndex((book) => {
-						return book.id === result.id
-					})
-
-					if (index !== -1) {
-						result.shelf = this.props.shelvedBooks[index].shelf
-					} else {
-						result.shelf = 'none'
-					}
-
-					return result
-				})
+				results = this.matchBooks(results, this.props.shelvedBooks)
 
 				this.setState({books: results})
 			})
