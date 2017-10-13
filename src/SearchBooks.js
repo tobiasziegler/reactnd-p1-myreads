@@ -47,6 +47,12 @@ class SearchBooks extends Component {
 		}
 	}
 
+	componentWillReceiveProps(nextProps) {
+		const results = this.matchBooks(this.state.books, nextProps.shelvedBooks)
+
+		this.setState({books: results})
+	}
+
 	render() {
 		const { books } = this.state
 		const { setShelf } = this.props
