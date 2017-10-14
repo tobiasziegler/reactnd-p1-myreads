@@ -16,7 +16,14 @@ class SearchBooks extends Component {
 		shelvedBooks: PropTypes.array.isRequired
 	}
 
-	// Match books already on shelves and add the shelf values
+	/*
+	 * Add shelf allocations to all of the books in the current search results.
+	 * The search results returned by the API are generic and don't have a
+	 * record of the shelves assigned within te current instance of the app.
+	 * This function will iterate through the results, check whether a matching
+	 * book is in the array of books assigned to shelves, and then assign the
+	 * shelf value if there is a match, or 'none' if no match is found.
+	 */
 	matchBooks = (searchResults, shelvedBooks) => {
 		return searchResults.map((result) => {
 			const index = shelvedBooks.findIndex((book) => {
@@ -33,6 +40,11 @@ class SearchBooks extends Component {
 		})
 	}
 
+	/**
+	 * Update the query field and retrieve updated search results. If the query
+	 * is non-empty, an API call will retrieve search results and update the
+	 * state so the results will be displayed.
+	 */
 	updateQuery = (query) => {
 		this.setState({ query: query.trim() })
 
@@ -51,6 +63,11 @@ class SearchBooks extends Component {
 		}
 	}
 
+	/**
+	 * Ensure that the shelf allocations are updated in the search results when
+	 * this component is receiving new props (i.e., when the app state has
+	 * updated).
+	 */
 	componentWillReceiveProps(nextProps) {
 		const results = this.matchBooks(this.state.books, nextProps.shelvedBooks)
 

@@ -24,6 +24,11 @@ class BooksApp extends React.Component {
         ]
     }
 
+    /**
+     * Update the shelf assigned to a book. This is first done on the server
+     * via an API call, and then the local state is updated by filtering out
+     * the old record for the book and inserting a new one.
+     */
     setShelf = (book, shelf) => {
         BooksAPI.update(book, shelf).then(() => {
             book.shelf = shelf
@@ -34,6 +39,10 @@ class BooksApp extends React.Component {
         })
     }
 
+    /**
+     * Retrieve the full list of books assigned to shelves from the server when
+     * the app is first loaded.
+     */
     componentDidMount() {
         BooksAPI.getAll().then((books) => {
             this.setState({ books: books })
