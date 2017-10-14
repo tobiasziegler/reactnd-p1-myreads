@@ -1,4 +1,5 @@
 {
+  "homepage": "https://tobiasziegler.github.io/reactnd-p1-myreads",
   "dependencies": {
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
