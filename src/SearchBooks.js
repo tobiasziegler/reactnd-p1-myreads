@@ -38,9 +38,13 @@ class SearchBooks extends Component {
 
 		if (query) {
 			BooksAPI.search(query).then((results) => {
-				results = this.matchBooks(results, this.props.shelvedBooks)
+				if (!results.error) {
+					results = this.matchBooks(results, this.props.shelvedBooks)
 
-				this.setState({books: results})
+					this.setState({books: results})
+				} else {
+					this.setState({books: []})
+				}
 			})
 		} else {
 			this.setState({books: []})
