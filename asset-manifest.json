@@ -1,14 +1,14 @@
 {
-  "main.css": "/reactnd-p1-myreads/static/css/main.a94c15ea.chunk.css",
-  "main.js": "/reactnd-p1-myreads/static/js/main.aee082be.chunk.js",
-  "main.js.map": "/reactnd-p1-myreads/static/js/main.aee082be.chunk.js.map",
-  "static/js/1.e391f0ff.chunk.js": "/reactnd-p1-myreads/static/js/1.e391f0ff.chunk.js",
-  "static/js/1.e391f0ff.chunk.js.map": "/reactnd-p1-myreads/static/js/1.e391f0ff.chunk.js.map",
-  "runtime~main.js": "/reactnd-p1-myreads/static/js/runtime~main.8f1a1d37.js",
-  "runtime~main.js.map": "/reactnd-p1-myreads/static/js/runtime~main.8f1a1d37.js.map",
-  "static/media/App.css": "/reactnd-p1-myreads/static/media/arrow-drop-down.78c6f53b.svg",
-  "static/css/main.a94c15ea.chunk.css.map": "/reactnd-p1-myreads/static/css/main.a94c15ea.chunk.css.map",
+  "main.css": "/reactnd-p1-myreads/static/css/main.a3ea2e0b.chunk.css",
+  "main.js": "/reactnd-p1-myreads/static/js/main.c40fc639.chunk.js",
+  "main.js.map": "/reactnd-p1-myreads/static/js/main.c40fc639.chunk.js.map",
+  "runtime~main.js": "/reactnd-p1-myreads/static/js/runtime~main.7a8eda39.js",
+  "runtime~main.js.map": "/reactnd-p1-myreads/static/js/runtime~main.7a8eda39.js.map",
+  "static/js/2.f76512c7.chunk.js": "/reactnd-p1-myreads/static/js/2.f76512c7.chunk.js",
+  "static/js/2.f76512c7.chunk.js.map": "/reactnd-p1-myreads/static/js/2.f76512c7.chunk.js.map",
   "index.html": "/reactnd-p1-myreads/index.html",
-  "precache-manifest.bb5a3ccd766930a4447149a99e12372f.js": "/reactnd-p1-myreads/precache-manifest.bb5a3ccd766930a4447149a99e12372f.js",
-  "service-worker.js": "/reactnd-p1-myreads/service-worker.js"
+  "precache-manifest.d21c848c20f9d24fb406065fdd1a4009.js": "/reactnd-p1-myreads/precache-manifest.d21c848c20f9d24fb406065fdd1a4009.js",
+  "service-worker.js": "/reactnd-p1-myreads/service-worker.js",
+  "static/css/main.a3ea2e0b.chunk.css.map": "/reactnd-p1-myreads/static/css/main.a3ea2e0b.chunk.css.map",
+  "static/media/App.css": "/reactnd-p1-myreads/static/media/arrow-drop-down.78c6f53b.svg"
 }
